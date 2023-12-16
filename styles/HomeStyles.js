@@ -55,18 +55,19 @@ export default StyleSheet.create({
       menuBas:{
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 80,
+        paddingTop: 60,
       },
       menuAra:{
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 30,
-        paddingBottom: 30,
+        //paddingBottom: 30,
       },
       menuSon:{
         alignItems: 'center',
         justifyContent: 'center',
         paddingBottom: 80,
+        paddingTop: 30,
       },
       menuText:{
         color: '#ffffff',

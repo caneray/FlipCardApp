@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import AppStyles from '../styles/AppStyles';
 import HomeStyles from '../styles/HomeStyles';
 import { useNavigation } from '@react-navigation/native';
+import Learn from './Learn';
+
 
 const HomeScreen = () => {
 
