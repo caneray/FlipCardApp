@@ -24,6 +24,7 @@ const HomeScreen = () => {
 
   const navigateToLearnedWords = () => {
     navigation.navigate('LearnedWords'); // 'LearnedWordsScreen' yerine gidilecek ekranın adını belirtin
+    
   };
 
   return (

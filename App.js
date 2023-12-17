@@ -47,19 +47,36 @@ export default function App() {
           options={{headerShown: false}} />
         <Stack.Screen 
           name='Learn' 
-          component={Learn} 
+          component={Learn}
+          options={{ 
+            title: 'Title Alanı',
+            
+            headerStyle: {
+              backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+              width: 100,
+            },
+            headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'Montserrat-ExtraBold'
+            },
+          }}
+          
         />
         <Stack.Screen 
-        name='Favorites' 
-        component={Favorites} 
+        name='Favorites'
+        component={Favorites}
+        options={{ title: 'Favoriler' }}
         />
         <Stack.Screen 
         name='UnknownWords' 
-        component={UnknownWords} 
+        component={UnknownWords}
+        options={{ title: 'Bilmediğim Kelimeler', }}
         />
         <Stack.Screen 
         name='LearnedWords' 
-        component={LearnedWords} 
+        component={LearnedWords}
+        options={{ title: 'Öğrendiğim Kelimeler' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
