@@ -49,10 +49,10 @@ export default function App() {
           name='Learn' 
           component={Learn}
           options={{ 
-            title: 'Title Alanı',
+            title: '',
             
             headerStyle: {
-              backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+              backgroundColor: '#FFF9EF', // Üst çubuk arka plan rengi
               width: 100,
             },
             headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
