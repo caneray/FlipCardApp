@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import Learn from './Learn';
 
 
-const HomeScreen = () => {
+const Home = () => {
 
   const navigation = useNavigation();
 
@@ -60,4 +60,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Home;

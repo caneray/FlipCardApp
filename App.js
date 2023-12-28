@@ -9,6 +9,8 @@ import Learn from './screens/Learn';
 import Favorites from './screens/Favorites';
 import LearnedWords from './screens/LearnedWords';
 import UnknownWords from './screens/UnknownWords';
+import AdminMenu from './screens/AdminMenu';
+import AddWord from './screens/AddWord';
 const Stack = createNativeStackNavigator();
 
 
@@ -48,7 +50,7 @@ export default function App() {
         <Stack.Screen 
           name='Learn' 
           component={Learn}
-          options={{ 
+          options={{ headerShown: false,
             title: '',
             
             headerStyle: {
@@ -66,7 +68,8 @@ export default function App() {
         <Stack.Screen 
         name='Favorites'
         component={Favorites}
-        options={{ title: 'Favoriler' }}
+        options={{ title: 'Favoriler' ,
+        headerShown: false}}
         />
         <Stack.Screen 
         name='UnknownWords' 
@@ -77,6 +80,36 @@ export default function App() {
         name='LearnedWords' 
         component={LearnedWords}
         options={{ title: 'Öğrendiğim Kelimeler' }}
+        />
+        <Stack.Screen 
+        name='AdminMenu' 
+        component={AdminMenu}
+        options={{ title: '',
+            
+        headerStyle: {
+          backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+          width: 100,
+        },
+        headerTintColor: '#FFF9EF', // Başlık (title) ve geri tuşu rengi
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontFamily: 'Montserrat-ExtraBold'
+        }, }}
+        />
+        <Stack.Screen 
+        name='AddWord' 
+        component={AddWord}
+        options={{ title: '',
+            
+        headerStyle: {
+          backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+          width: 100,
+        },
+        headerTintColor: '#FFF9EF', // Başlık (title) ve geri tuşu rengi
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontFamily: 'Montserrat-ExtraBold'
+        }, }}
         />
       </Stack.Navigator>
     </NavigationContainer>
