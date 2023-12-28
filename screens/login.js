@@ -2,23 +2,18 @@ import { Text, View, TextInput, ImageBackground, Button, KeyboardAvoidingView, P
 import AppStyles from '../styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
-import { auth } from "../firebase";
+import "firebase/firestore";
+import { auth, firestore } from "../firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { collection } from 'firebase/firestore';
+import { firebase } from '@react-native-firebase/database';
+import AdminMenu from './AdminMenu';
+import Home from './Home';
+
 
 export default function Login({ navigation }) {
   // const background = require("../assets/");
-
-  if (auth.currentUser) {
-    navigation.navigate("Home");
-  } else {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigation.navigate("Home");
-      }
-    });
-  }
-
   let [errorMessage, setErrorMessage] = React.useState("");
   let [email, setEmail] = React.useState("");
   let [password, setPassword] = React.useState("");
@@ -27,7 +22,8 @@ export default function Login({ navigation }) {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          navigation.navigate("Home", { user: userCredential.user });
+          const user = userCredential.user;
+          checkUserRole(user);
           setErrorMessage("");
           setEmail("");
           setPassword("");
@@ -38,8 +34,23 @@ export default function Login({ navigation }) {
     } else {
       setErrorMessage("Kullanıcı adı ve şifre alanı boş geçilemez!");
     }
+  };
 
-  }
+    const checkUserRole = async (user) => {
+      const userID = user.uid;
+      const adminsCollection = await firestore.collection('admins').get();
+      adminsCollection.forEach(doc => {
+        const adminData = doc.data();
+        if(adminData.userID === userID) {
+          navigation.navigate(AdminMenu);
+          return;
+        }else{
+          navigation.navigate(Home);
+        }
+      });
+      
+    };
+    
   return (
     <SafeAreaView style={AppStyles.container}>
       <KeyboardAvoidingView
