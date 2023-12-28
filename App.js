@@ -68,18 +68,57 @@ export default function App() {
         <Stack.Screen 
         name='Favorites'
         component={Favorites}
-        options={{ title: 'Favoriler' ,
-        headerShown: false}}
+        options={{ 
+          title: 'Favori Kelimelerim',
+
+          headerStyle: {
+            backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+            width: 100,
+
+          },
+          headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+          headerTitleStyle: {
+            fontFamily: 'Montserrat-Bold', 
+            fontSize: 26,
+
+          },
+        }}
         />
         <Stack.Screen 
         name='UnknownWords' 
         component={UnknownWords}
-        options={{ title: 'Bilmediğim Kelimeler', }}
+        options={{ 
+          title: 'Bilmediğim Kelimeler', 
+          headerStyle: {
+            backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+            width: 100,
+
+          },
+          headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+          headerTitleStyle: {
+            fontFamily: 'Montserrat-Bold', 
+            fontSize: 26,
+
+          },
+        }}
         />
         <Stack.Screen 
         name='LearnedWords' 
         component={LearnedWords}
-        options={{ title: 'Öğrendiğim Kelimeler' }}
+        options={{ 
+          title: 'Öğrendiğim Kelimeler',
+          headerStyle: {
+            backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+            width: 100,
+
+          },
+          headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+          headerTitleStyle: {
+            fontFamily: 'Montserrat-Bold', 
+            fontSize: 26,
+
+          },
+        }}
         />
         <Stack.Screen 
         name='AdminMenu' 
