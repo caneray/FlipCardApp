@@ -29,7 +29,6 @@ const Home = () => {
 
   return (
     <View style={HomeStyles.home}>
-      <Text style={HomeStyles.hosgeldinMesaji}>Hoş Geldin!</Text>
       <View style={HomeStyles.sayfa}>
         <View style={HomeStyles.menuBas}>
           <TouchableOpacity style={HomeStyles.k1} onPress={navigateToLearn}>
@@ -60,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;

@@ -17,11 +17,15 @@ const AddWord = () => {
     let Kaydet = async () => {
         // Firestore'a veri eklemek için bir referans oluşturun
         const wordsRef = await firestore.collection('words');
+        const lastDocument = await wordsRef.orderBy('wordId', 'desc').limit(1).get();
+        const lastNumber = lastDocument.docs.length > 0 ? lastDocument.docs[0].data().wordId : 0;
+        const newNumber = lastNumber + 1;
 
         // Eklenecek veriyi oluşturun
         const yeniKelime = {
             ingilizce: ingilizce,
             turkce: turkce,
+            wordId: newNumber
         };
 
         // Firestore'a veriyi ekleme işlemi
@@ -33,6 +37,9 @@ const AddWord = () => {
             .catch((error) => {
                 console.error('Hata oluştu: ', error);
             });
+
+            setIngilizce('');
+            setTurkce('');
     };
 
     return(
