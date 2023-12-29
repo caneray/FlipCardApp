@@ -11,6 +11,8 @@ import LearnedWords from './screens/LearnedWords';
 import UnknownWords from './screens/UnknownWords';
 import AdminMenu from './screens/AdminMenu';
 import AddWord from './screens/AddWord';
+import DeleteWords from './screens/DeleteWords';
+import UpdateWords from './screens/UpdateWords';
 const Stack = createNativeStackNavigator();
 
 
@@ -46,7 +48,21 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{headerShown: false}} />
+          options={{
+              title: 'Hoş Geldin!', 
+              headerStyle: {
+                backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+                width: 100,
+    
+              },
+              headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+              headerTitleStyle: {
+                fontFamily: 'Montserrat-Bold', 
+                fontSize: 26,
+    
+              },
+          }}
+        />
         <Stack.Screen 
           name='Learn' 
           component={Learn}
@@ -140,6 +156,38 @@ export default function App() {
         name='AddWord' 
         component={AddWord}
         options={{ title: 'Kelime Ekle',
+        headerStyle: {
+          backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+          width: 100,
+
+        },
+        headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+        headerTitleStyle: {
+          fontFamily: 'Montserrat-Bold', 
+          fontSize: 26,
+
+        }, }}
+        />
+        <Stack.Screen 
+        name='UpdateWords' 
+        component={UpdateWords}
+        options={{ title: 'Kelime Güncelle',
+        headerStyle: {
+          backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
+          width: 100,
+
+        },
+        headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
+        headerTitleStyle: {
+          fontFamily: 'Montserrat-Bold', 
+          fontSize: 26,
+
+        }, }}
+        />
+        <Stack.Screen 
+        name='DeleteWords' 
+        component={DeleteWords}
+        options={{ title: 'Kelime Sil',
         headerStyle: {
           backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
           width: 100,

@@ -14,11 +14,11 @@ const AdminMenu = () => {
   };
 
   const navigateToUpdate = () => {
-    navigation.navigate('UpdateWord'); 
+    navigation.navigate('UpdateWords'); 
   };
 
   const navigateToDelete = () => {
-    navigation.navigate('DeleteWord'); 
+    navigation.navigate('DeleteWords'); 
   };
 
   return (
@@ -48,4 +48,4 @@ const AdminMenu = () => {
   );
 };
 
-export default AdminMenu;
+export default AdminMenu;
