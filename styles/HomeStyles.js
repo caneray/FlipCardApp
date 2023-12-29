@@ -3,7 +3,7 @@ export default StyleSheet.create({
     home:{
         flex: 1,
         backgroundColor: '#FFEDB7',
-        padding: 30,
+        //padding:5,
         alignItems: 'center',
       },
       hosgeldinMesaji:{
@@ -11,7 +11,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         fontSize: 30,
         fontFamily: 'Montserrat-SemiBold',
-        padding:30
+        //padding:5
       },
       sayfa:{
         height: 850,

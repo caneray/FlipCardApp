@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const windowHeight = Dimensions.get('window').height;
 
 export default StyleSheet.create({
     k1: {
@@ -37,7 +39,18 @@ export default StyleSheet.create({
     justifyContent: 'center',
     },
     container: {
+        paddingBottom: 200,
+        //flex: 1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        height: windowHeight
+    },
+    kaydetButton: {
+        width : 153,
+        height: 38,
+        borderRadius: 20,
+        backgroundColor: '#8CC152',
+        alignItems: "center", 
+        justifyContent: 'center',
     },
 });

@@ -123,31 +123,33 @@ export default function App() {
         <Stack.Screen 
         name='AdminMenu' 
         component={AdminMenu}
-        options={{ title: '',
-            
+        options={{ title: 'Yönetici Paneli',
         headerStyle: {
           backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
           width: 100,
+
         },
-        headerTintColor: '#FFF9EF', // Başlık (title) ve geri tuşu rengi
+        headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
         headerTitleStyle: {
-          fontWeight: 'bold',
-          fontFamily: 'Montserrat-ExtraBold'
+          fontFamily: 'Montserrat-Bold', 
+          fontSize: 26,
+
         }, }}
         />
         <Stack.Screen 
         name='AddWord' 
         component={AddWord}
-        options={{ title: '',
-            
+        options={{ title: 'Kelime Ekle',
         headerStyle: {
           backgroundColor: '#FFEDB7', // Üst çubuk arka plan rengi
           width: 100,
+
         },
-        headerTintColor: '#FFF9EF', // Başlık (title) ve geri tuşu rengi
+        headerTintColor: '#D39E00', // Başlık (title) ve geri tuşu rengi
         headerTitleStyle: {
-          fontWeight: 'bold',
-          fontFamily: 'Montserrat-ExtraBold'
+          fontFamily: 'Montserrat-Bold', 
+          fontSize: 26,
+
         }, }}
         />
       </Stack.Navigator>
