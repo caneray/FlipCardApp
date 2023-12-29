@@ -23,7 +23,7 @@ const AdminMenu = () => {
 
   return (
     <View style={HomeStyles.home}>
-      <Text style={HomeStyles.hosgeldinMesaji}>Yönetici Paneli</Text>
+      <Text style={HomeStyles.hosgeldinMesaji}></Text>
       <View style={HomeStyles.sayfa}>
         <View style={HomeStyles.menuBas}>
           <TouchableOpacity style={AdminStyles.k1} onPress={navigateToCreate}>
