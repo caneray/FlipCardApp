@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Dimensions, TouchableOpacity, FlatList, Pressable } from 'react-native';
 import FlipCard from 'react-native-flip-card';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { firebase } from '../firebase'
+import { firebase } from '../firebase';
+import "firebase/firestore";
+import {firestore} from '../firebase';
 
 const DeleteWords = () => {
  const [words, setUsers] = useState([]);
@@ -26,6 +28,18 @@ const DeleteWords = () => {
      )
  }, [])
 
+ const deleteWord = async (docId) => {
+    try {
+      await firebase.firestore().collection('words').doc(docId).delete();
+      console.log('Kelime silindi:', docId);
+      // Silme işlemi başarılı olduysa, ilgili geri bildirimi sağlayabilirsiniz.
+    } catch (error) {
+      console.error('Kelime silinirken hata oluştu:', error);
+      // Hata durumunda uygun geri bildirimi sağlayabilirsiniz.
+    }
+  };
+  
+
  return (
   <View style={{ flex:1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFF9E9',  }}>
       <FlatList
@@ -36,9 +50,12 @@ const DeleteWords = () => {
           <View style={styles.kutular}>
                 <View style={styles.innerContainer}>
                     <Text style={styles.itemHeading}>{item.ingilizce}</Text> 
-                    <TouchableOpacity style={styles.button}> 
-                        <Icon name="trash-alt" size={30} color="#ffffff" solid />       
-                </TouchableOpacity> 
+                    <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => deleteWord(item.id)}
+                    >
+                    <Icon name="trash-alt" size={30} color="#ffffff" solid />
+                    </TouchableOpacity>
                 </View>
             </View>
           )}
