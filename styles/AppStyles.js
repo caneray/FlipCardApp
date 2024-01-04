@@ -12,7 +12,7 @@ export default StyleSheet.create({
     color: "#0c6a86",
     fontFamily: 'Montserrat-ExtraBold',
     fontSize: 40,
-    marginBottom: 58
+    marginBottom: 20
   },
   container: {
     flex: 1,
@@ -51,10 +51,10 @@ export default StyleSheet.create({
     
   },
   topMargin: {
-    marginTop: 30
+    marginTop: 15
   },
   bottomMargin: {
-    marginBottom: 58
+    marginBottom: 30
   },
   rightMargin: {
     marginRight: 30

@@ -20,7 +20,6 @@ const DeleteWords = () => {
                  words.push({
                      id: doc.id,
                      ingilizce,
-
                  })
              })
              setUsers(words)
