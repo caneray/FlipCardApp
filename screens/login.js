@@ -52,7 +52,7 @@ export default function Login({ navigation }) {
     };
     
   return (
-    <SafeAreaView style={AppStyles.container}>
+    <View style={AppStyles.container}>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : null}
         keyboardVerticalOffset={60}>
@@ -85,7 +85,13 @@ export default function Login({ navigation }) {
           <InlineTextButton  text="Kaydol" onPress={() => navigation.navigate("SignUp")} />
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+      <View>
+      <Image
+        source={require('../assets/fca.png')}
+        style={{ width: 360, height: 360, marginBottom: -178 }} 
+      />
+      </View>
+    </View>
   );
 }
 

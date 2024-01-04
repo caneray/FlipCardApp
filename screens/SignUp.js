@@ -1,4 +1,4 @@
-import { Text, View, TextInput, ImageBackground, Button, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
+import { Text, View, TextInput, Image, Button, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native';
 import AppStyles from '../styles/AppStyles';
 import InlineTextButton from '../components/InlineTextButton';
 import React from 'react';
@@ -36,7 +36,7 @@ export default function SignUp({ navigation }) {
   }
 
   return (
-    <SafeAreaView style={AppStyles.container } >
+    <View style={AppStyles.container } >
       <KeyboardAvoidingView 
         behavior={Platform.OS === "ios" ? "padding" : null}
         keyboardVerticalOffset={60}>
@@ -73,7 +73,13 @@ export default function SignUp({ navigation }) {
         </View>
         {/* <Button title="Kayıt Ol" onPress={signUp} color="#f7b267" /> */}
       </KeyboardAvoidingView>
-    </SafeAreaView>
+      <View>
+        <Image
+          source={require('../assets/fca.png')}
+          style={{ width: 360, height: 360, marginBottom: -124 }} 
+        />
+      </View>
+    </View>
   );
 }
 
